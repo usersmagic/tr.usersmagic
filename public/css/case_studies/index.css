@@ -230,6 +230,12 @@
     color: rgba(3, 17, 73, 0.3);
   }
 
+  @media only screen and (max-width: 1020px) and (min-width: 800px) {
+    .header-headline {
+      font: 600 36px "manrope";
+    }
+  }
+
   @media only screen and (max-width: 420px) and (min-width: 300px) {
 
     .all-inner-wrapper {
