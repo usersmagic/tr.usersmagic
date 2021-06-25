@@ -7,6 +7,9 @@ module.exports = (req, res) => {
         if (err) {
             return res.status(400).send(err)
         }
+        const photos = {
+          smallLogo: '/res/images/reports/small_logo_blue.png'
+        }
         return res.render("resources/index", {
             page: 'resources/index',
             title: 'Resources',
@@ -14,11 +17,12 @@ module.exports = (req, res) => {
             includes: {
                 external: {
                     css: ['page', 'general', 'header', 'confirm', 'logo', 'inputs', 'buttons', 'fontawesome', 'createPage'],
-                    js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage']
+                    js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage', 'filterPage', 'reportPage', 'headerListener']
                 }
             },
             caseStudyArray,
-            browser_lang: '["tr"]'
+            browser_lang: '["en"]',
+            photos
         });
     });
 }

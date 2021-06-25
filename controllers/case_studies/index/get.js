@@ -2,7 +2,7 @@
 const CaseStudy = require("../../../models/case_studies/casestudy");
 
 module.exports = async (req, res) => {
-
+    if (!req.query.id) return res.redirect('/company'); 
     const id = req.query.id;
     const caseStudy = await CaseStudy.findOne({_id: id});
 
@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
       includes: {
         external: {
           css: ['page', 'general', 'header', 'confirm', 'logo', 'inputs', 'buttons', 'fontawesome', 'createPage', "index"],
-          js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage']
+          js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage', 'filterPage', 'reportPage', 'headerListener']
         }
       },
       caseStudy

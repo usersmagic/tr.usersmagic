@@ -59,7 +59,7 @@ function slideUserQuoteSlider(slider) {
 
   slider.childNodes[0].style.marginLeft = (slider.childNodes[0].offsetLeft - 1) + 'px';
 
-  setTimeout(() => slideUserQuoteSlider(slider), 30);
+  setTimeout(() => slideUserQuoteSlider(slider), 15);
 }
 
 function showEmmaUserDetails() {
@@ -74,7 +74,11 @@ function showEmmaUserDetails() {
 }
 
 window.onload = () => {
+  headerListener(); // Listen for header scroll
+  
   createPageListener(); // Call create page listener to listen the create page
+  filterPageListener(); // Call filter page listener to listen the filter page
+  reportPageListener(); // Call filter page listener to listen the filter page
 
   const allHeader = document.querySelector('.all-header');
   const allInnerWrapper = document.querySelector('.all-inner-wrapper');
@@ -90,6 +94,10 @@ window.onload = () => {
   const blueBackground = document.querySelector('.interactive-screen-background-blue');
   const borderLine = document.querySelector('.interactive-button-border-line');
 
+  const insideProductCreateProjectWrapper = document.querySelector('.inside-product-create-project-wrapper');
+  const insideProductCreateTargetWrapper = document.querySelector('.inside-product-create-target-wrapper');
+  const insideProductSeeReportWrapper = document.querySelector('.inside-product-see-report-wrapper');
+
   document.addEventListener('click', event => {
     if (event.target.classList.contains('each-target-user'))
       updateTargetUsersDetailsWrapper(targetUsers[event.target.id]);
@@ -98,46 +106,79 @@ window.onload = () => {
       updateTargetUsersDetailsWrapper(targetUsers[event.target.parentNode.id]);
     
     if (event.target.classList.contains('interactive-create-survey-button') || event.target.parentNode.classList.contains('interactive-create-survey-button') || event.target.parentNode.parentNode.classList.contains('interactive-create-survey-button')) {
-      if (darkBlueBackground.classList.contains('opacity-decrease-animation-class')) {
+      if (document.querySelector('.inside-product-create-project-wrapper').style.display == 'none') {
         blueBackground.classList.remove('opacity-decrease-animation-class');
         blueBackground.classList.add('opacity-increase-animation-class');
         darkBlueBackground.classList.remove('opacity-decrease-animation-class');
         darkBlueBackground.classList.add('opacity-increase-animation-class');
   
         moveHorizontallyGradually(borderLine, 30);
-      } 
+        insideProductCreateProjectWrapper.style.display = 'flex';
+        insideProductCreateTargetWrapper.style.display = 'none';
+        insideProductSeeReportWrapper.style.display = 'none';
+      }
     }
 
     if (event.target.classList.contains('interactive-target-users-button') || event.target.parentNode.classList.contains('interactive-target-users-button') || event.target.parentNode.parentNode.classList.contains('interactive-target-users-button')) {
-      blueBackground.classList.remove('opacity-decrease-animation-class');
-      blueBackground.classList.add('opacity-increase-animation-class');
-      darkBlueBackground.classList.add('opacity-decrease-animation-class');
-      darkBlueBackground.classList.remove('opacity-increase-animation-class');
-
-      if (borderLine.offsetLeft - borderLine.parentNode.offsetLeft == 30) {
-        moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth/2 - 101);
-      } else {
-        moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth/2 - 99);
+      if (document.querySelector('.inside-product-create-target-wrapper').style.display == 'none') {
+        blueBackground.classList.remove('opacity-decrease-animation-class');
+        blueBackground.classList.add('opacity-increase-animation-class');
+        darkBlueBackground.classList.add('opacity-decrease-animation-class');
+        darkBlueBackground.classList.remove('opacity-increase-animation-class');
+  
+        if (borderLine.offsetLeft - borderLine.parentNode.offsetLeft == 30) {
+          moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth/2 - 101);
+        } else {
+          moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth/2 - 99);
+        }
+  
+        insideProductCreateProjectWrapper.style.display = 'none';
+        insideProductCreateTargetWrapper.style.display = 'flex';
+        insideProductSeeReportWrapper.style.display = 'none';
       }
     }
 
     if (event.target.classList.contains('interactive-analyze-results-button') || event.target.parentNode.classList.contains('interactive-analyze-results-button') || event.target.parentNode.parentNode.classList.contains('interactive-analyze-results-button')) {
-      blueBackground.classList.add('opacity-decrease-animation-class');
-      blueBackground.classList.remove('opacity-increase-animation-class');
-      darkBlueBackground.classList.add('opacity-decrease-animation-class');
-      darkBlueBackground.classList.remove('opacity-increase-animation-class');
-
-      moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth - 235);
+      if (document.querySelector('.inside-product-see-report-wrapper').style.display == 'none') {
+        blueBackground.classList.add('opacity-decrease-animation-class');
+        blueBackground.classList.remove('opacity-increase-animation-class');
+        darkBlueBackground.classList.add('opacity-decrease-animation-class');
+        darkBlueBackground.classList.remove('opacity-increase-animation-class');
+  
+        moveHorizontallyGradually(borderLine, borderLine.parentNode.offsetWidth - 235);
+  
+        insideProductCreateProjectWrapper.style.display = 'none';
+        insideProductCreateTargetWrapper.style.display = 'none';
+        insideProductSeeReportWrapper.style.display = 'flex';
+      }
     }
   });
 
   const userQuoteSliders = document.querySelectorAll('.user-quotes-slider');
   userQuoteSliders.forEach(userQuoteSlider => slideUserQuoteSlider(userQuoteSlider));
 
-  document.addEventListener('mouseover', event => {
-    if (event.target.classList.contains('responses-questions-person-details-button'))
-      showEmmaUserDetails();
-    else if (document.querySelector('.emma-user-details-wrapper').style.display == 'block')
-      document.querySelector('.emma-user-details-wrapper').style.display = 'none';
+  if (document.body.offsetWidth < 450) {
+    userQuoteSliders[1].style.display = 'none';
+  }
+
+  document.querySelector('.all-inner-wrapper').addEventListener('scroll', () => {
+    if (document.querySelector('.emma-user-details-wrapper').style.display !== 'none') 
+      document.querySelector('.emma-user-details-wrapper').style.display = 'none'
   })
+
+  if (typeof window.orientation !== 'undefined') {
+    document.addEventListener('mouseover', event => {
+      if (event.target.classList.contains('responses-questions-person-details-button'))
+        showEmmaUserDetails();
+      else if (document.querySelector('.emma-user-details-wrapper').style.display == 'block')
+        document.querySelector('.emma-user-details-wrapper').style.display = 'none';
+    });
+  } else {
+    document.addEventListener('click', event => {
+      if (event.target.classList.contains('responses-questions-person-details-button'))
+        showEmmaUserDetails();
+      else if (document.querySelector('.emma-user-details-wrapper').style.display == 'block')
+        document.querySelector('.emma-user-details-wrapper').style.display = 'none';
+    });
+  }
 }

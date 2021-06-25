@@ -59,7 +59,7 @@ function adjustResponsiveDesign () {
 }
 
 window.onload = () => {
-
+    headerListener();
     caseStudiesContent = document.getElementById("case-studies-content");
     eachCaseStudy = document.querySelectorAll(".each-case-study-wrapper");
     viewAllButton = document.getElementById("view-all-button");
@@ -78,10 +78,10 @@ window.onload = () => {
             }
 
             caseStudiesContent.classList.add("increase-height-animation");
-            viewAllButton.innerHTML = "Daha az görüntüle";
+            viewAllButton.innerHTML = "Daha az göster";
 
         } else {
-            viewAllButton.innerHTML = "Tümünü görüntüle";
+            viewAllButton.innerHTML = "Daha fazla göster";
             
             if (caseStudiesContent.classList.contains("increase-height-animation")) {
                 caseStudiesContent.classList.remove("increase-height-animation");         
@@ -90,7 +90,9 @@ window.onload = () => {
         }
     }
 
-    viewAllButton.addEventListener("click", expandCaseStudies);
+    if (eachCaseStudy.length > 4) {
+      viewAllButton.addEventListener("click", expandCaseStudies);
+    }
 
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "/resources/getAll");
