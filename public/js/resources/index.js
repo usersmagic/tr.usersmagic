@@ -103,38 +103,38 @@ window.onload = () => {
                 const caseStudiesArray = JSON.parse(xhr.response);
                 
                 document.addEventListener("click" , () => {
-                    if (event.target.classList[0] == "each-case-study-wrapper") {
-                        const caseStudyName = event.target.childNodes[2].innerHTML
-                        caseStudiesArray.forEach(caseStudy => {
-                            if (caseStudy.company_name === caseStudyName) {
-                                location.href = `/resources/case_studies?id=${caseStudy._id}`;
-                            }
-                        })
-                    }
-                    else if (event.target.classList[0] == "case-study-company-industry") {
-                        const caseStudyName = event.target.parentNode.childNodes[2].innerHTML
-                        caseStudiesArray.forEach(caseStudy => {
-                            if (caseStudy.company_name === caseStudyName) {
-                                location.href = `/resources/case_studies?id=${caseStudy._id}`;
-                            }
-                        })
-                    }
-                    else if (event.target.classList[0] == "case-study-company-name") {
-                        const caseStudyName = event.target.innerHTML
-                        caseStudiesArray.forEach(caseStudy => {
-                            if (caseStudy.company_name === caseStudyName) {
-                                location.href = `/resources/case_studies?id=${caseStudy._id}`;
-                            }
-                        })
-                    }
-                    else if (event.target.classList[0] == "case-study-image") {
-                        const caseStudyName = event.target.parentNode.childNodes[2].innerHTML
-                        caseStudiesArray.forEach(caseStudy => {
-                            if (caseStudy.company_name === caseStudyName) {
-                                location.href = `/resources/case_studies?id=${caseStudy._id}`;
-                            }
-                        })
-                    }
+                  if (event.target.classList[0] == "each-case-study-wrapper") {
+                      const caseStudyIndustry = event.target.childNodes[1].innerHTML
+                      caseStudiesArray.forEach(caseStudy => {
+                          if (caseStudy.company_industry === caseStudyIndustry) {
+                              location.href = `/resources/case_studies?id=${caseStudy._id}`;
+                          }
+                      })
+                  }
+                  else if (event.target.classList[0] == "case-study-company-name") {
+                      const caseStudyIndustry = event.target.parentNode.childNodes[1].innerHTML
+                      caseStudiesArray.forEach(caseStudy => {
+                          if (caseStudy.company_industry === caseStudyIndustry) {
+                              location.href = `/resources/case_studies?id=${caseStudy._id}`;
+                          }
+                      })
+                  }
+                  else if (event.target.classList[0] == "case-study-company-industry") {
+                      const caseStudyIndustry = event.target.innerHTML
+                      caseStudiesArray.forEach(caseStudy => {
+                          if (caseStudy.company_industry === caseStudyIndustry) {
+                              location.href = `/resources/case_studies?id=${caseStudy._id}`;
+                          }
+                      })
+                  }
+                  else if (event.target.classList[0] == "case-study-image") {
+                      const caseStudyIndustry = event.target.parentNode.childNodes[1].innerHTML
+                      caseStudiesArray.forEach(caseStudy => {
+                          if (caseStudy.company_industry === caseStudyIndustry) {
+                              location.href = `/resources/case_studies?id=${caseStudy._id}`;
+                          }
+                      })
+                  }
                 })
             } else {
                 alert("An error occured please try again.")
