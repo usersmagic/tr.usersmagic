@@ -21,7 +21,7 @@ module.exports = (req, res) => {
                 }
             },
             caseStudyArray,
-            browser_lang: '["en"]',
+            browser_lang: '["tr"]',
             photos
         });
     });
