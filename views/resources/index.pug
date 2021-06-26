@@ -8,7 +8,7 @@ block main
         span.each-content-title Kullanıcı rehberi
     .case-studies-header#case-studies-header
         span.case-studies-header-title Müşteri araştırmaları
-        span.case-studies-view-all-span#view-all-button Daha fazla göster
+        span.case-studies-view-all-span Daha fazla göster
     hr
     .case-studies-content#case-studies-content
         each caseStudy in caseStudyArray
@@ -19,7 +19,7 @@ block main
                     .case-study-company-name #{caseStudy.company_name}
     .case-studies-header#case-studies-header
         span.case-studies-header-title Raporlar & Araştırmalar
-        span.case-studies-view-all-span#view-all-button Daha fazla göster
+        span.case-studies-view-all-span Daha fazla göster
     hr
     .case-studies-content#case-studies-content
       a(href="/reports/electronics_report_tr").each-case-study-wrapper
