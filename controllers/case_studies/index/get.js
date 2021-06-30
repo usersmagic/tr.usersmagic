@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
 
     return res.render('case_studies/index', {
       page: 'case_studies/index',
-      title: `${caseStudy.company_name} Case Study`,
+      title: `${caseStudy.company_name} araştırması`,
       meta: 'case_studies',
       includes: {
         external: {

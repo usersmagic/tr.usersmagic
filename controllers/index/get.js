@@ -2,7 +2,7 @@
 module.exports = (req, res) => {
   return res.render('index/index', {
     page: 'index/index',
-    title: 'Unleash Your Users\' Magic',
+    title: 'Hedef kitlenizi belirleyin',
     meta: 'usersmagic',
     includes: {
       external: {

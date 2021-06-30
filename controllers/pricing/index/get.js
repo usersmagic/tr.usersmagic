@@ -3,7 +3,7 @@
 module.exports = (req, res) => {
   return res.render('pricing/index', {
     page: 'pricing/index',
-    title: 'Pricing',
+    title: 'Ücretlendirme',
     meta: 'pricing',
     includes: {
       external: {

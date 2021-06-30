@@ -4392,7 +4392,7 @@ module.exports = (req, res) => {
   ]
   return res.render('reports/a101', {
     page: 'reports/a101',
-    title: 'A101 Report',
+    title: 'A101 Raporu',
     meta: 'A101 Report',
     includes: {
       external: {

@@ -226,7 +226,7 @@ module.exports = (req, res) => {
 
     return res.render('company/index', {
       page: 'company/index',
-      title: 'Unleash Your Users\' Magic',
+      title: 'Hedef kitlenizi belirleyin',
       meta: 'company',
       includes: {
         external: {

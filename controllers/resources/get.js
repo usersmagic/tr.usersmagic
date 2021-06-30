@@ -12,7 +12,7 @@ module.exports = (req, res) => {
         }
         return res.render("resources/index", {
             page: 'resources/index',
-            title: 'Resources',
+            title: 'Kaynaklar',
             meta: 'resources',
             includes: {
                 external: {
