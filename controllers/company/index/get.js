@@ -1,6 +1,5 @@
 // Get /company landing page
 
-const Question = require('../../../models/question/Question');
 
 module.exports = (req, res) => {
   const target_users = [
@@ -221,25 +220,20 @@ module.exports = (req, res) => {
     }
   ];
 
-  Question.getFiltersByCountry(target.country, (err, filters) => {
-    if (err) return res.redirect('/tester');
-
-    return res.render('company/index', {
-      page: 'company/index',
-      title: 'Hedef kitlenizi belirleyin',
-      meta: 'company',
-      includes: {
-        external: {
-          css: ['page', 'general', 'header', 'confirm', 'logo', 'inputs', 'buttons', 'fontawesome', 'createPage', 'filterPage', 'reportPage'],
-          js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage', 'filterPage', 'reportPage', 'headerListener']
-        }
-      },
-      target_users,
-      target_user_details,
-      user_quotes,
-      target,
-      filters,
-      questions
-    });
+  return res.render('company/index', {
+    page: 'company/index',
+    title: 'Hedef kitlenizi belirleyin',
+    meta: 'company',
+    includes: {
+      external: {
+        css: ['page', 'general', 'header', 'confirm', 'logo', 'inputs', 'buttons', 'fontawesome', 'createPage', 'filterPage', 'reportPage'],
+        js: ['page', 'duplicateElement', 'confirm', 'dragAndDrop', 'buttonListeners', 'createPage', 'filterPage', 'reportPage', 'headerListener']
+      }
+    },
+    target_users,
+    target_user_details,
+    user_quotes,
+    target,
+    questions
   });
 }
