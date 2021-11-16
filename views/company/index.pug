@@ -8,7 +8,7 @@ block main
       span.start-title Topluluk Merkezli
       span.start-title Kullanıcı Araştırması
       span.start-text Hedef kitlenizi düzenli şekilde takip etmekve içgörüler toplamak her zaman  uzun bir süreç olmuştur.  Usersmagic ile  dakikalar içerisinde araştırmanızı oluşturup, hedef kitlenizden hızlı ve detaylı içgörüler toplayabilirsiniz. 
-      a.start-button(href="https://app.usersmagic.com/auth/register" target="_blank") 5 dakikada anketinizi yayınlayın
+      a.start-button(href="https://embed.usersmagic.com/auth/register" target="_blank") 5 dakikada anketinizi yayınlayın
     .inside-product-outer-wrapper
       .inside-product-wrapper-background
         img.inside-product-background-image(src="/res/images/company/product_background.png" alt="usersmagic create surveys and test")
@@ -26,7 +26,7 @@ block main
             span.info-content-subtitle Kitlenize Ulaşın
             span.info-content-title Hedef kitleniz sizi burada, sizi bekliyor!
             span.info-content-text 150 bini aşkın insan, araştırmalara katılmak için Usersmagic’te sizi bekliyor. Yaş grubu, meslek, hobi, alışkanlıkar ve daha birçok filtre ile sizin için en uygun kitleyi seçin.
-            a.seablue-button(href="https://app.usersmagic.com/auth/register" target="_blank") Kendi kitleni seç
+            a.seablue-button(href="https://embed.usersmagic.com/auth/register" target="_blank") Kendi kitleni seç
           .target-users-right-wrapper
             .target-users-details-wrapper
               .target-users-details-header-wrapper
@@ -154,13 +154,13 @@ block main
             span.info-content-subtitle Sonuçlar
             span.info-content-title İçgörülerin kimlerden geldiğini detaylıca öğrenin!
             span.info-content-text Kullanıcıların verdiği cevaplar, cevapların kimlerden geldiğini anladığınız zaman anlam kazanır. Size sadece anketlerinize ve araştırmalarınıza yanıt sağlamanızı değil aynı zamanda cevapların kimlerden geldiğini anlamanız konusunda da yardımcı oluyoruz. Hazırlanan otomatik grafik ve görsellerle araştırma sonuçlarını anlamanız ve analiz etmeniz çok kolay. Her araştırmadan sonra sonuçlarınızı karşılaştırabilirsiniz.
-            a.seablue-button(href="https://app.usersmagic.com/auth/register" target="_blank") İçgörü almaya başla
+            a.seablue-button(href="https://embed.usersmagic.com/auth/register" target="_blank") İçgörü almaya başla
     .templates-wrapper
           .templates-left-wrapper
             span.info-content-subtitle Araştırma Şablonları
             span.info-content-title Ne soracağınızı bilmiyor musunuz? Araştırma Şablonları’mızı deneyin!
             span.info-content-text Doğru soruları sormak oldukça zordur, fakat bunu yapmak için uzman bir Kullanıcı Araştırmacısı olmanıza gerek yok! Hedef kullanıcı kitlenize doğru soruları sormanıza yardımcı olmak için 20'den fazla araştırma ve test şablonu hazırladık. Size uygun olan şablonu seçin ve araştırmanızı 5 dakika içinde yayınlayın.
-            a.seablue-button(href="https://app.usersmagic.com/auth/register" target="_blank") Şablonlara göz at
+            a.seablue-button(href="https://embed.usersmagic.com/auth/register" target="_blank") Şablonlara göz at
           .templates-right-wrapper
     .interactive-screen-wrapper
       .interactive-screen-background-wrapper
@@ -206,9 +206,9 @@ block main
                     span.header-each-step-text Project Name
                     .header-credit-wrapper
                       span.header-credit-amount 150 credits
-                      a.header-get-credit-button(target="_blank" href="https://app.usersmagic.com/auth/register") Get Credits
+                      a.header-get-credit-button(target="_blank" href="https://embed.usersmagic.com/auth/register") Get Credits
                     .header-buttons-wrapper
-                      a.general-seablue-button.finish-project-button(target="_blank" href="https://app.usersmagic.com/auth/register")
+                      a.general-seablue-button.finish-project-button(target="_blank" href="https://embed.usersmagic.com/auth/register")
                         span Start Testing
                   .inside-product-inner-wrapper
                     .blocks-wrapper
@@ -288,21 +288,11 @@ block main
                     span.header-each-step-text College Students
                     .header-credit-wrapper
                       span.header-credit-amount 150 credits
-                      a.header-get-credit-button(target="_blank" href="https://app.usersmagic.com/auth/register") Get Credits
+                      a.header-get-credit-button(target="_blank" href="https://embed.usersmagic.com/auth/register") Get Credits
                     .header-buttons-wrapper
-                      a.general-seablue-button.finish-project-button(target="_blank" href="https://app.usersmagic.com/auth/register")
+                      a.general-seablue-button.finish-project-button(target="_blank" href="https://embed.usersmagic.com/auth/register")
                         span Start Testing
                   .inside-product-inner-wrapper
-                    .filters-wrapper
-                      .target-settings-wrapper
-                        img.each-type-image(src="/res/images/company/block_icons/filter.png" alt="usersmagic welcome block")
-                        span.each-type-title Choose Filters
-                      .custom-filters-wrapper
-                        .each-filter-wrapper.age-filter-wrapper#age(class=( ( target.filters && Object.keys(target.filters).includes('age') )  ? "selected-filter" : "") )
-                            span Age
-                        each filter in filters
-                          .each-filter-wrapper(id=filter._id.toString() class=( ( target.filters && Object.keys(target.filters).includes(filter._id.toString()) )  ? "selected-filter" : "") )
-                            span= filter.name
                     .filter-settings-wrapper
                       .filter-settings-header-wrapper
                         img.each-type-image(src="/res/images/company/block_icons/filter.png" alt="usersmagic filters")
@@ -339,9 +329,9 @@ block main
                     span.header-each-step-text Results
                     .header-credit-wrapper
                       span.header-credit-amount 150 credits
-                      a.header-get-credit-button(target="_blank" href="https://app.usersmagic.com/auth/register") Get Credits
+                      a.header-get-credit-button(target="_blank" href="https://embed.usersmagic.com/auth/register") Get Credits
                     .header-buttons-wrapper
-                      a.general-seablue-button.finish-project-button(target="_blank" href="https://app.usersmagic.com/auth/register")
+                      a.general-seablue-button.finish-project-button(target="_blank" href="https://embed.usersmagic.com/auth/register")
                         span Start Testing
               .inside-product-inner-wrapper
                 .all-content-inner-content-wrapper
@@ -351,8 +341,8 @@ block main
                       .results-download-button
                         span.results-download-button-span Download Results
                         .download-options-wrapper
-                          a.each-download-option(href="https://app.usersmagic.com/auth/register" target="_blank") .CSV
-                          a.each-download-option(href="https://app.usersmagic.com/auth/register" target="_blank") .PDF
+                          a.each-download-option(href="https://embed.usersmagic.com/auth/register" target="_blank") .CSV
+                          a.each-download-option(href="https://embed.usersmagic.com/auth/register" target="_blank") .PDF
                   if questions && questions.length
                         .questions-summary-results-wrapper
                           each question in questions
@@ -450,7 +440,7 @@ block main
               span.beta-text Beta
             span.video-call-main-title Kitlenizle birebir görüşün
             span.video-call-text Hedef kitlenizle birebir görüşmek, kullanıcı araştırmanız için hayati bir ihtiyaçtır. Usersmagic ile hedef kullanıcı kitlenizden insanlarla video görüşmeler düzenleyebilirsiniz. 
-            a.seablue-button(href="https://app.usersmagic.com/auth/register" target="_blank") Beta için hemen kaydol
+            a.seablue-button(href="https://embed.usersmagic.com/auth/register" target="_blank") Beta için hemen kaydol
           .video-call-right-wrapper
             img.video-call-image(src="/res/images/company/video_call_image.png" alt="usersmagic video call with testers")
             .video-call-brown-circle
@@ -468,8 +458,8 @@ block main
                     span Favori Uygulamalar
                   each user in target_users
                     .each-video-call-user(id=user._id)
-                      a.schedule-call-button(href="https://app.usersmagic.com/auth/register" target="_blank") Video görüşme ayarla
-                      a.schedule-call-button-responsive(href="https://app.usersmagic.com/auth/register" target="_blank") Görüşme ayarla
+                      a.schedule-call-button(href="https://embed.usersmagic.com/auth/register" target="_blank") Video görüşme ayarla
+                      a.schedule-call-button-responsive(href="https://embed.usersmagic.com/auth/register" target="_blank") Görüşme ayarla
                       img(src=user.image alt="usersmagic target users")
                       span= user.name
                       span= user.occupation
@@ -519,11 +509,7 @@ block main
     .footer-wrapper
       img.footer-logo(src="/res/images/company/footer_logo.png" alt="usersmagic logo")
       .footer-links-wrapper
-        a.each-footer-link(href="/") Templates
-        a.each-footer-link(href="/resources") Kaynaklar
-        a.each-footer-link(href="/tester") Tester
-        a.each-footer-link(href="/pricing") Ücretlendirme
-        a.each-footer-link(href="https://tester.usersmagic.com/agreement/privacy" target="_blank") Privacy Policy
+        a.each-footer-link(href="https://tester.usersmagic.com/agreement/privacy" target="_blank") Gizlilik Politikası
       span.copyright-text Copyright 2020 - Usersmagic Inc.
   .emma-user-details-wrapper(style="display: none;")
         .target-users-details-header-wrapper
